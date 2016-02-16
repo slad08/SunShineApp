@@ -1,6 +1,7 @@
 package android.bignerdranch.com.sunshineapp;
 
 import android.app.Fragment;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -110,7 +111,13 @@ public class PlaceHolderFragment extends Fragment {
                 }
             }
         }
-
         return rootView;
+    }
+    public class FetchWeatherTask extends AsyncTask<>{
+
+        @Override
+        protected Object doInBackground(Object[] params) {
+            return null;
+        }
     }
 }
