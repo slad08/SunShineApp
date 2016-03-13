@@ -1,13 +1,9 @@
 package android.bignerdranch.com.sunshineapp;
 
 import android.app.Fragment;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -15,20 +11,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 public class PlaceHolderFragment extends Fragment {
 
     public final String TAG = "PlaceHolderFragment";
 
-    public PlaceHolderFragment() {
+   /* public PlaceHolderFragment() {
 
-    }
+    }*/
 
     public String[] sunList = {
             "Today-Sunny-80/65",
@@ -38,26 +27,27 @@ public class PlaceHolderFragment extends Fragment {
             "Fri-Foggy-60/44",
             "Sat-Sunny-77/65"
     };
-@Override
+/*@Override
 public void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
 
-    setHasOptionsMenu(true);
+    //setHasOptionsMenu(true);
 }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
-        inflater.inflate(R.menu.fragment_placeholder_menu,menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item){
-       int id = item.getItemId();
-        if (id == R.id.action_refresh){
-                return true;
+        @Override
+        public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+            inflater.inflate(R.menu.fragment_placeholder_menu,menu);
         }
-        return super.onOptionsItemSelected(item);
-    }
+
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item){
+           int id = item.getItemId();
+            if (id == R.id.action_refresh){
+                    return true;
+            }
+            return super.onOptionsItemSelected(item);
+        }
+    */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -79,10 +69,10 @@ public void onCreate(Bundle savedInstanceState){
 
         Log.d(TAG, "PlaceHolderFragment работа фрагмеента");
 
-
+       // new FetchWeatherTask().execute();
         return rootView;
     }
-
+/*
     public class FetchWeatherTask extends AsyncTask<Void, Void, Void> {
 
         private final String Log_TAG = FetchWeatherTask.class.getSimpleName();
@@ -123,9 +113,10 @@ public void onCreate(Bundle savedInstanceState){
                 }
                 if (buff.length() == 0) {
                     //Поток был пустой.Нет точек для парсинга
-                    forecastJsonStr = null;
+                  return null;
                 }
                 forecastJsonStr = buff.toString();
+                Log.v(Log_TAG,"Forecast JSON String: "+forecastJsonStr);
 
             } catch (IOException ee) {
                 Log.e("PlaceHolderFragment", "Error", ee);
@@ -145,9 +136,6 @@ public void onCreate(Bundle savedInstanceState){
             }
               return null;
         }
-    }
-
-
-
+    }*/
 
 }
